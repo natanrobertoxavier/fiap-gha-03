@@ -1,22 +1,19 @@
 # Definindo o nome do Workflow
-name: Teste Workflow
+name: Test Workflow
 
-# Definindo quando o Workflow será disparado (Trigger)
+# Definindo quando o workflow será disparado
 on:
   push:
     branches: [ "main", "developer" ]
 
-# Definindo os jobs que o workflows executará
+# Definindo os jobs que o workflow executará
 jobs:
-  teste_job:
-    name: Executando na minha máquina pessoal
+  test_job:
+    name: Executando o Job de Teste
     runs-on: self-hosted
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2 # Essa action faz o download do código fonte da minha aplicação definida na linha 7
-
-      - name: Executando um comando simples
-        run: echo "Olá, mundo! Este é o nosso primeiro job no Github Actions" # Executa um comando dentro do nosso runner (linha 13)
-
-      - name: Executando um 3 Step
-        run: echo "Esse é o 3 step sendo executado" # Executa um comando dentro do nosso runner (linha 13)
+      - name: Step 1
+        uses: actions/checkout@v2
+        
+      - name: Step 2
+        run: echo "Olá, mundo! Esse é o meu primeiro projeto usano um runner on premise!"
