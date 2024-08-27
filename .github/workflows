@@ -1,0 +1,22 @@
+# Definindo o nome do Workflow
+name: Teste Workflow
+
+# Definindo quando o Workflow será disparado (Trigger)
+on:
+  push:
+    branches: [ "main", "developer" ]
+
+# Definindo os jobs que o workflows executará
+jobs:
+  teste_job:
+    name: Executando job de teste
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 # Essa action faz o download do código fonte da minha aplicação definida na linha 7
+
+      - name: Executando um comando simples
+        run: echo "Olá, mundo! Este é o nosso primeiro job no Github Actions" # Executa um comando dentro do nosso runner (linha 13)
+
+      - name: Executando um 3 Step
+        run: echo "Esse é o 3 step sendo executado" # Executa um comando dentro do nosso runner (linha 13)
