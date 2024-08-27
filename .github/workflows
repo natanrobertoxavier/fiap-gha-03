@@ -9,8 +9,8 @@ on:
 # Definindo os jobs que o workflows executará
 jobs:
   teste_job:
-    name: Executando job de teste
-    runs-on: ubuntu-latest
+    name: Executando na minha máquina pessoal
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v2 # Essa action faz o download do código fonte da minha aplicação definida na linha 7
